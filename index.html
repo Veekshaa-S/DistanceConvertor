@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background:url(https://cdn.photoroom.com/v1/assets-cached.jpg?path=backgrounds_v3/black/Photoroom_black_background_extremely_fine_texture_only_black_co_bb229b4b-002b-4ec4-85fa-2aec353fc780.jpg);
+            background-size: cover;
+            text-align: center;
+        }
+        label{
+            width: 200px;
+            color: white;
+            font-size: 30px;
+        }
+        button{
+            align-items: center;
+            width: 200px;
+            height: 40px;
+        }
+        #mmInput{
+            width:50px;
+        }
+        #mInput{
+            width:50px;
+        }
+        #cmInput{
+            width:50px;
+        }
+        .container{
+            width: 500px;
+            height: 500px;
+           
+        }
+        </style>
+</head>
+<body>
+    <center>
+    <h1 style="color: white;font-size: 60px;padding-top: 100px;">Unit Converter</h1><br>
+<div class="container">
+    <div>
+        <label>Millimeters (mm): </label>
+        <input type="number" id="mmInput"><br><br>
+        <button onclick="convertMmToCm()">Convert to Centimeters</button>
+        <p id="cmResult" style="color: white;"></p>
+    </div>
+
+    <div>
+        <label>Centimeters (cm): </label>
+        <input type="number" id="cmInput"><br><br>
+        <button onclick="convertCmToM()">Convert to Meters</button>
+        <p id="mResult"style="color: white;"></p>
+    </div>
+
+    <div>
+        <label>Meters (m): </label>
+        <input type="number" id="mInput"><br><br>
+        <button onclick="convertMToKm()">Convert to Kilometers</button>
+        <p id="kmResult"style="color: white;"></p>
+    </div>
+
+</div>
+
+    <script>
+        function convertMmToCm() {
+            const mmInput = document.getElementById("mmInput").value;
+            const cmResult = mmInput * 0.1;
+            document.getElementById("cmResult").textContent = `${mmInput} mm = ${cmResult} cm`;
+        }
+
+        function convertCmToM() {
+            const cmInput = document.getElementById("cmInput").value;
+            const mResult = cmInput * 0.01;
+            document.getElementById("mResult").textContent = `${cmInput} cm = ${mResult} m`;
+        }
+
+        function convertMToKm() {
+            const mInput = document.getElementById("mInput").value;
+            const kmResult = mInput * 0.001;
+            document.getElementById("kmResult").textContent = `${mInput} m = ${kmResult} km`;
+        }
+    
+
+
+    </script>
+    </center>
+</body>
+</html>
